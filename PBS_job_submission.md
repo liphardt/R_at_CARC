@@ -20,7 +20,11 @@ module load r-3.6.0-gcc-7.3.0-python2-7akol5t
 
 Rscript my_script.R
 ```
-This PBS script would then be submitted to the job queue with `qsub my_pbs_script.pbs`.
+This PBS script would then be submitted to the job queue with 
+
+```
+yourusername@wheeler-sn$ qsub my_pbs_script.pbs
+```
 
 A PBS script is just a bash script that combines flags for the job scheduler (PBS), and bash commands. We can break it down by sections. 
 
