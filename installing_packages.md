@@ -55,17 +55,16 @@ Installing packages in a script is a little more complicated so it might be easi
 
 So if you haven't created a personal library yet either interactively or through a script you first need to do that. The following commands in an R script will take care of this for you (it should...):
 
-First create the directory, .libPaths() will not append your library list unless the directory exists. 
 ```
-> dir.create(Sys.getenv("R_LIBS_USER", recursive=T, mode="0777"))
-```
-Now append your library path with your newly created local library
-```
-> .libPaths(c(Sys.getenv("R_LIBS_USER"), .libPaths()))
-```
-The above steps are only necessary the first time you are installing packages
-Now install packages normally
-```
+# First create the directory, .libPaths() will not append your library list unless the directory exists. 
+dir.create(Sys.getenv("R_LIBS_USER", recursive=T, mode="0777"))
+
+#Now append your library path with your newly created local library
+.libPaths(c(Sys.getenv("R_LIBS_USER"), .libPaths()))
+
+#The above steps are only necessary the first time you are installing packages. Remove or comment out if you have already created a persional library.
+
+#Now install packages normally
 > install.packages("ape", dependencies=T, lib=Sys.getenv("R_LIBS_USER"), repos="http://cran.r-project.org")
 ```
 
