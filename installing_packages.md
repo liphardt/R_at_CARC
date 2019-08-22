@@ -68,4 +68,4 @@ dir.create(Sys.getenv("R_LIBS_USER", recursive=T, mode="0777"))
 > install.packages("ape", dependencies=T, lib=Sys.getenv("R_LIBS_USER"), repos="http://cran.r-project.org")
 ```
 
-The first two lines are only necessary when you have not created a personal library for that major version of R yet, otherwise you just need to specify the repos you are downloading packages from and specify your personal library as the install location. Actually, you shouldn't need to specify the library since you appended your library path, but it doesn't hurt to be explicit. l
+The first two lines are only necessary when you have not created a personal library for that major version of R yet, otherwise you just need to specify the repos you are downloading packages from and specify your personal library as the install location. Actually, you shouldn't need to specify the library since you appended your library path, but it doesn't hurt to be explicit.
